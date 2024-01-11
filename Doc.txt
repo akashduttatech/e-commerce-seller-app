@@ -1,0 +1,13 @@
+Authentication:
+Normal user - Default Auth
+Admin, Vendor - Guards Auth
+
+Routes:
+Front Routes - Users
+Admin Routes - Admin, Vendor
+
+TODO:
+Create vendor table [username, password, etc]
+Create admin table [username, password, etc]
+
+https://sell.amazon.in/?ref_=sdin_h_home
