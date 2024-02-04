@@ -181,14 +181,14 @@
                 <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
                     <li class="dropdown-header">
                         <h6>{{ $userName }}</h6>
-                        <span>Web Designer</span>
+                        <span>Admin</span>
                     </li>
                     <li>
                         <hr class="dropdown-divider">
                     </li>
 
                     <li>
-                        <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                        <a class="dropdown-item d-flex align-items-center" href="{{ route('profile.edit') }}">
                             <i class="bi bi-person"></i>
                             <span>My Profile</span>
                         </a>
@@ -218,10 +218,25 @@
                     </li>
 
                     <li>
-                        <a class="dropdown-item d-flex align-items-center" href="#">
+                        <div class="dropdown-item d-flex align-items-center">
+                            <i class="bi bi-box-arrow-right"></i>
+                            <form method="POST" action="{{ route('logout') }}">
+                                @csrf
+                                <x-dropdown-link :href="route('logout')"
+                                        onclick="event.preventDefault();
+                                                    this.closest('form').submit();">
+                                    {{ __('Log Out') }}
+                                </x-dropdown-link>
+                            </form>
+                        </div>
+                        <form action="{{ route('logout') }}" method="post">
+                            @csrf
+                            <button type="submit">Sign Out</button>
+                        </form>
+                        {{-- <a class="dropdown-item d-flex align-items-center" href="#">
                             <i class="bi bi-box-arrow-right"></i>
                             <span>Sign Out</span>
-                        </a>
+                        </a> --}}
                     </li>
 
                 </ul><!-- End Profile Dropdown Items -->

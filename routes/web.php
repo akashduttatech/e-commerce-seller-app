@@ -61,13 +61,15 @@ Route::middleware('auth')->group(function () {
         Route::get('edit-product/{id}', [ProductController::class, 'edit'])->name('admin.edit-product');
         Route::patch('update-product/{id}', [ProductController::class, 'update'])->name('admin.update-product');
         Route::delete('delete-product/{id}', [ProductController::class, 'destroy'])->name('admin.delete-product');
-        /***************** Users *****************/
-        Route::get('/', [UserController::class, 'index'])->name('admin.users');
+    });
+    Route::prefix('users')->group(function () {
+    /***************** Users *****************/
+        // Route::get('/', [UserController::class, 'index'])->name('admin.users');
         // Route::get('add-user', [UserController::class, 'create'])->name('admin.add-user');
         // Route::post('store-user', [UserController::class, 'store'])->name('admin.store-user');
-        Route::get('view-user/{id}', [UserController::class, 'show'])->name('admin.view-user');
-        Route::get('edit-user/{id}', [UserController::class, 'edit'])->name('admin.edit-user');
-        Route::patch('update-user/{id}', [UserController::class, 'update'])->name('admin.update-user');
-        Route::delete('delete-user/{id}', [UserController::class, 'destroy'])->name('admin.delete-user');
+        // Route::get('view-user/{id}', [UserController::class, 'show'])->name('admin.view-user');
+        // Route::get('edit-user/{id}', [UserController::class, 'edit'])->name('admin.edit-user');
+        // Route::patch('update-user/{id}', [UserController::class, 'update'])->name('admin.update-user');
+        // Route::delete('delete-user/{id}', [UserController::class, 'destroy'])->name('admin.delete-user');
     });
 });

@@ -63,17 +63,27 @@
                                     <form class="row g-3 needs-validation" action="{{ route('register') }}"
                                         method="post">
                                         @csrf
+
                                         <div class="col-12">
-                                            <label for="yourUsername" class="form-label">Email</label>
+                                            <label for="name" class="form-label">Name</label>
+                                            <input type="name" name="name" class="form-control" id="name"
+                                                required>
+                                            @error('name')
+                                                <span class="text-danger">{{ $errors->first('name') }}</span>
+                                            @enderror
+                                        </div>
+
+                                        <div class="col-12">
+                                            <label for="email" class="form-label">Email</label>
                                             <div class="input-group has-validation">
                                                 <span class="input-group-text" id="inputGroupPrepend">@</span>
                                                 <input type="text" name="email" value="{{ old('email') }}"
-                                                    class="form-control" id="yourUsername" required>
+                                                    class="form-control" id="email" required>
                                                 <div class="invalid-feedback"></div>
-                                                @error('password')
-                                                    <span class="text-danger">{{ $errors->first('password') }}</span>
-                                                @enderror
                                             </div>
+                                            @error('password')
+                                                <span class="text-danger">{{ $errors->first('email') }}</span>
+                                            @enderror
                                         </div>
 
                                         <div class="col-12">
@@ -86,9 +96,10 @@
                                         </div>
 
                                         <div class="col-12">
-                                            <label for="password" class="form-label">Confirm Password</label>
+                                            <label for="password_confirmation" class="form-label">Confirm
+                                                Password</label>
                                             <input type="password" name="password_confirmation" class="form-control"
-                                                id="password" required>
+                                                id="password_confirmation" required>
                                             @error('password_confirmation')
                                                 <span
                                                     class="text-danger">{{ $errors->first('password_confirmation') }}</span>
@@ -99,7 +110,8 @@
                                             <button class="btn btn-primary w-100" type="submit">Create Account</button>
                                         </div>
                                         <div class="col-12">
-                                            <p class="small mb-0">Already have an account? <a href="{{ url('login') }}">Login</a></p>
+                                            <p class="small mb-0">Already have an account? <a
+                                                    href="{{ url('login') }}">Login</a></p>
                                         </div>
                                     </form>
 

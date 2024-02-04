@@ -34,16 +34,24 @@
 
         <li class="nav-heading">Pages</li>
 
-        <li class="nav-item">
-            <a class="nav-link collapsed" href="#">
+        {{-- <li class="nav-item">
+            <a class="nav-link collapsed" href="{{ route('users') }}">
                 <i class="bi bi-person"></i>
                 <span>Users</span>
             </a>
-        </li>
+        </li> --}}
         <li class="nav-item">
             <a class="nav-link collapsed" href="#">
                 <i class="bi bi-person"></i>
                 <span>Profile</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link collapsed">
+                <i class="bi bi-person"></i>
+                <form action="" method="post">
+                    <button type="submit">Logout</button>
+                </form>
             </a>
         </li>
         <!-- End Profile Page Nav -->
